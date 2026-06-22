@@ -99,7 +99,12 @@ export default function Home() {
               <img
                 src="/AidanNation (Text Only - Transparent Background).png"
                 alt="AidanNation"
-                className="h-40 w-auto mx-auto"
+                className="mx-auto"
+                style={{
+                  width: '500px',
+                  height: 'auto',
+                  maxWidth: '90vw',
+                }}
               />
             </motion.div>
 
