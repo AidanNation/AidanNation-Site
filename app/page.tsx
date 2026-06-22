@@ -83,36 +83,34 @@ export default function Home() {
           transition={{ duration: 4, repeat: Infinity }}
         ></motion.div>
 
+        {/* Logo - Absolute Positioned for Proper Layering */}
+        <motion.img
+          src="/AidanNation (Text Only - Transparent Background).png"
+          alt="AidanNation"
+          className="absolute z-20"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+          style={{
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: '600px',
+            maxWidth: '90vw',
+            height: 'auto',
+            filter: 'drop-shadow(0 0 30px rgba(11, 132, 255, 0.8))',
+          }}
+        />
+
         {/* Content */}
         <StaggerContainer delay={0.2}>
-          <div className="relative z-10 text-center px-6">
-            {/* Logo with Transparent Background */}
-            <motion.div
-              className="mb-8 flex justify-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-            >
-              <img
-                src="/AidanNation (Text Only - Transparent Background).png"
-                alt="AidanNation"
-                style={{
-                  width: '600px',
-                  maxWidth: '90vw',
-                  height: 'auto',
-                  filter: 'drop-shadow(0 0 30px rgba(11, 132, 255, 0.8))',
-                  mixBlendMode: 'multiply',
-                  opacity: 0.95,
-                }}
-              />
-            </motion.div>
-
+          <div className="relative z-10 text-center px-6 flex flex-col items-center justify-center min-h-screen">
             {/* Tagline */}
             <motion.p
-              className="font-raleway text-2xl text-silver mb-12 opacity-90"
+              className="font-raleway text-2xl text-silver mb-12 opacity-90 mt-32"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
             >
               Music. Creativity. Flight.
             </motion.p>
@@ -128,7 +126,7 @@ export default function Home() {
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
             >
               Explore Music
             </motion.a>
