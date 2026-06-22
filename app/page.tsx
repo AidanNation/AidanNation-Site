@@ -104,6 +104,8 @@ export default function Home() {
                   width: '500px',
                   height: 'auto',
                   maxWidth: '90vw',
+                  mixBlendMode: 'screen',
+                  backgroundColor: 'transparent',
                 }}
               />
             </motion.div>
