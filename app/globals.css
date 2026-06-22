@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --black: #000000;
+  --moody-blue: #021B79;
+  --electric-blue: #0B84FF;
+  --silver: #C0C0C0;
+  --white: #FFFFFF;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: var(--font-raleway);
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    background: linear-gradient(to right, var(--electric-blue), var(--white));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-electric {
+    box-shadow: 0 0 20px rgba(11, 132, 255, 0.5), 0 0 40px rgba(11, 132, 255, 0.2);
+  }
+
+  .nav-underline {
+    position: relative;
+    text-decoration: none;
+  }
+
+  .nav-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--electric-blue);
+    transition: width 0.3s ease;
+  }
+
+  .nav-underline:hover::after {
+    width: 100%;
+  }
+}
+
+@layer utilities {
+  .backdrop-blur-xl {
+    backdrop-filter: blur(28px);
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% {
+      text-shadow: 0 0 10px rgba(11, 132, 255, 0.5), 0 0 20px rgba(2, 27, 121, 0.3);
+    }
+    50% {
+      text-shadow: 0 0 20px rgba(11, 132, 255, 0.9), 0 0 40px rgba(2, 27, 121, 0.6), 0 0 60px rgba(11, 132, 255, 0.5);
+    }
+  }
+
+  @keyframes slide-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes rotate-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+
+  .animate-slide-in-up {
+    animation: slide-in-up 0.8s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s ease-out;
+  }
+
+  .animate-rotate-slow {
+    animation: rotate-slow 20s linear infinite;
+  }
+
+  @keyframes glitch {
+    0% {
+      text-shadow: -2px 0 var(--electric-blue), 2px 0 var(--moody-blue);
+      transform: translate(0);
+    }
+    20% {
+      text-shadow: -2px 0 var(--electric-blue), 2px 0 var(--moody-blue);
+      transform: translate(-2px, 2px);
+    }
+    40% {
+      text-shadow: -2px 0 var(--electric-blue), 2px 0 var(--moody-blue);
+      transform: translate(-2px, -2px);
+    }
+    60% {
+      text-shadow: 2px 0 var(--moody-blue), -2px 0 var(--electric-blue);
+      transform: translate(2px, 2px);
+    }
+    80% {
+      text-shadow: 2px 0 var(--moody-blue), -2px 0 var(--electric-blue);
+      transform: translate(2px, -2px);
+    }
+    100% {
+      text-shadow: -2px 0 var(--electric-blue), 2px 0 var(--moody-blue);
+      transform: translate(0);
+    }
+  }
+
+  @keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      opacity: 1;
+      text-shadow: 0 0 10px rgba(11, 132, 255, 0.8), 0 0 20px rgba(2, 27, 121, 0.5);
+    }
+    20%, 24%, 55% {
+      opacity: 0.5;
+      text-shadow: 0 0 5px rgba(11, 132, 255, 0.3);
+    }
+  }
+
+  @keyframes float-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes glow-flare {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(11, 132, 255, 0.5), 0 0 40px rgba(2, 27, 121, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(11, 132, 255, 0.8), 0 0 60px rgba(2, 27, 121, 0.4), inset 0 0 30px rgba(11, 132, 255, 0.2);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  .animate-glitch {
+    animation: glitch 0.3s infinite;
+  }
+
+  .animate-flicker {
+    animation: flicker 3s infinite;
+  }
+
+  .animate-float-up {
+    animation: float-up 0.6s ease-out;
+  }
+
+  .animate-glow-flare {
+    animation: glow-flare 2s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(11, 132, 255, 0.2), transparent);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+  }
+}
