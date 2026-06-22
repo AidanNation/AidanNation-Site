@@ -97,7 +97,7 @@ export default function Home() {
               }}
             >
               <img
-                src="/aidannation-text-logo.png"
+                src="/AidanNation (Text Only - Transparent Background).png"
                 alt="AidanNation"
                 className="h-40 w-auto mx-auto"
               />
