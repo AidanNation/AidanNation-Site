@@ -83,34 +83,28 @@ export default function Home() {
           transition={{ duration: 4, repeat: Infinity }}
         ></motion.div>
 
-        {/* Logo - Absolute Positioned for Proper Layering */}
-        <motion.img
-          src="/AidanNation (Text Only - Transparent Background).png"
-          alt="AidanNation"
-          className="absolute z-20"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          style={{
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            width: '600px',
-            maxWidth: '90vw',
-            height: 'auto',
-            filter: 'drop-shadow(0 0 30px rgba(11, 132, 255, 0.8))',
-          }}
-        />
-
         {/* Content */}
         <StaggerContainer delay={0.2}>
-          <div className="relative z-10 text-center px-6 flex flex-col items-center justify-center min-h-screen">
+          <div className="relative z-10 text-center px-6">
+            {/* Title */}
+            <motion.h1
+              className="font-orbitron text-6xl font-bold mb-6 text-white opacity-80"
+              animate={{ textShadow: [
+                '0 0 10px rgba(11, 132, 255, 0.5), 0 0 20px rgba(2, 27, 121, 0.3)',
+                '0 0 20px rgba(11, 132, 255, 0.9), 0 0 40px rgba(2, 27, 121, 0.6)',
+                '0 0 10px rgba(11, 132, 255, 0.5), 0 0 20px rgba(2, 27, 121, 0.3)',
+              ] }}
+              transition={{ duration: 3, repeat: Infinity }}
+            >
+              AIDANNATION
+            </motion.h1>
+
             {/* Tagline */}
             <motion.p
-              className="font-raleway text-2xl text-silver mb-12 opacity-90 mt-32"
+              className="font-raleway text-2xl text-silver mb-12 opacity-90"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
             >
               Music. Creativity. Flight.
             </motion.p>
