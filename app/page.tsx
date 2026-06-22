@@ -86,22 +86,18 @@ export default function Home() {
         {/* Content */}
         <StaggerContainer delay={0.2}>
           <div className="relative z-10 text-center px-6">
-            {/* Logo */}
-            <motion.div
-              className="mb-8 flex justify-center"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
+            {/* Minimal Title */}
+            <motion.h1
+              className="font-orbitron text-5xl font-bold mb-6 text-white opacity-70"
+              animate={{ textShadow: [
+                '0 0 10px rgba(11, 132, 255, 0.5), 0 0 20px rgba(2, 27, 121, 0.3)',
+                '0 0 20px rgba(11, 132, 255, 0.9), 0 0 40px rgba(2, 27, 121, 0.6)',
+                '0 0 10px rgba(11, 132, 255, 0.5), 0 0 20px rgba(2, 27, 121, 0.3)',
+              ] }}
+              transition={{ duration: 3, repeat: Infinity }}
             >
-              <img
-                src="/aidannation-logo-3d.png"
-                alt="AidanNation Logo"
-                className="max-w-md h-auto drop-shadow-2xl"
-                style={{
-                  filter: 'drop-shadow(0 0 30px rgba(11, 132, 255, 0.6))',
-                }}
-              />
-            </motion.div>
+              AIDANNATION
+            </motion.h1>
 
             {/* Tagline */}
             <motion.p
