@@ -100,8 +100,9 @@ export default function Home() {
                   width: '600px',
                   maxWidth: '90vw',
                   height: 'auto',
-                  filter: 'drop-shadow(0 0 30px rgba(11, 132, 255, 0.8)) brightness(1.1)',
-                  mixBlendMode: 'lighten',
+                  filter: 'drop-shadow(0 0 30px rgba(11, 132, 255, 0.8))',
+                  mixBlendMode: 'multiply',
+                  opacity: 0.95,
                 }}
               />
             </motion.div>
